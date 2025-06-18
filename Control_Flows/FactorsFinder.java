@@ -1,19 +1,17 @@
 import java.util.Scanner;
-public class FactorsFinder {
+public class GreatestFactor2 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int number = sc.nextInt();
+        int greatestFactor = 1;
 
-        if(number > 0){
-            int counter = 1;
-            while(counter < number){
-                if(number % counter == 0){
-                    System.out.println(counter);
-                }
-                counter++;
+        for(int i = number - 1; i >= 1; i--) {
+            if(number % i == 0) {
+                greatestFactor = i;
+                break;
             }
-        } else {
-            System.out.println("Enter a positive integer.");
         }
+
+        System.out.println("Greatest factor: " + greatestFactor);
     }
 }
